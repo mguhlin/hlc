@@ -71,6 +71,8 @@
    else{if(document.fullscreenElement){try{await document.exitFullscreen();}catch{}}$('projectBtn').focus();}
  }
  buildDates();const startIndex=hashIndex();if(startIndex===null)showToday();else{index=startIndex;render();}
+ function openFromHero(firstDay){if(firstDay){index=0;$('dateNotice').hidden=true;render();}else showToday();$('calendarPage').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});$('calendarPage').setAttribute('tabindex','-1');$('calendarPage').focus({preventScroll:true});}
+ $('heroTodayBtn').addEventListener('click',()=>openFromHero(false));$('heroStartBtn').addEventListener('click',()=>openFromHero(true));
  $('prevBtn').addEventListener('click',()=>go(index-1));$('nextBtn').addEventListener('click',()=>go(index+1));$('todayBtn').addEventListener('click',showToday);
  $('gradeSelect').addEventListener('change',()=>{band=$('gradeSelect').value;save('hlc-grade',band);render();});
  $('monthBtn').addEventListener('click',openMonth);
