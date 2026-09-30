@@ -1,0 +1,42 @@
+/* History Event Maps — print rules for a single organizer sheet.
+   ---------------------------------------------------------------------------
+   Loaded by organizer.html ONLY. It owns the @page rule, which cannot be
+   scoped to a selector — loading it on the hub would force every hub print
+   into Letter landscape too.
+
+   The sheet is authored at exactly 10.5in × 8in inside an 11in × 8.5in page,
+   which is the 0.25in margin the generate_packets.py Playwright run also
+   assumes. Keep the two in step or the PDFs shift.
+   ------------------------------------------------------------------------ */
+
+.print-shell{display:flex;align-items:center;justify-content:center;padding:8px 0 24px}
+
+/* Multi-sheet packet rendering (generate_packets.py builds one of these per
+   language and Playwright prints it, then splits it into per-map PDFs). */
+.print-shell,.packet-shell,.packet-page{box-sizing:border-box}
+.packet-shell{background:#dfe5ec;padding:18px}
+.packet-page{width:11in;height:8.5in;padding:.25in;margin:0 auto 18px;background:#fff;box-shadow:0 6px 22px rgba(0,0,0,.15)}
+.packet-page .sheet{width:10.5in;height:8in;border:none;box-shadow:none}
+.packet-page:last-child{margin-bottom:0}
+
+@media print{
+  @page{size:Letter landscape;margin:0}
+  html,body{width:11in;height:8.5in;margin:0!important;padding:0!important;background:#fff;overflow:hidden}
+  /* `.wrap > footer`, never a bare `footer`: the sheet's own <footer> carries
+     the sources line, TEKS focus, and credit, and must survive printing. */
+  .topbar,.viewbar,.no-print,.wrap > footer,#back-to-top{display:none!important}
+  .wrap{max-width:none;margin:0;padding:0}
+  .print-shell{width:11in;height:8.5in;padding:.25in!important;margin:0!important;display:block;min-height:0}
+  .sheet{border:none;box-shadow:none;margin:0;transform:none!important}
+
+  .packet-shell{padding:0;background:#fff}
+  .packet-page{width:11in;height:8.5in;padding:.25in;margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .packet-page:last-child{break-after:auto;page-break-after:auto}
+  html.packet-html,body.packet-doc{height:auto!important;min-height:0!important;overflow:visible!important;width:11in!important}
+  .packet-doc .packet-shell{height:auto!important;overflow:visible!important}
+}
+
+/* The sheet is a fixed 10.5in wide; scale it down rather than let it overflow. */
+@media (max-width:1080px){
+  .print-shell{align-items:flex-start;overflow-x:auto;justify-content:flex-start}
+}

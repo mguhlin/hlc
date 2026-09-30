@@ -1,0 +1,12 @@
+{
+ "declaration":{"name":"National Archives · Declaration of Independence","url":"https://www.archives.gov/founding-docs/declaration-transcript","date":"1776-07-04"},
+ "constitution":{"name":"National Archives · Constitution","url":"https://www.archives.gov/founding-docs/constitution-transcript","date":"1787-09-17"},
+ "billRights":{"name":"National Archives · Bill of Rights","url":"https://www.archives.gov/founding-docs/bill-of-rights-transcript","date":"1791-12-15"},
+ "emancipation":{"name":"National Archives · Emancipation Proclamation","url":"https://www.archives.gov/exhibits/featured-documents/emancipation-proclamation","date":"1863-01-01"},
+ "amendment13":{"name":"National Archives · 13th Amendment","url":"https://www.archives.gov/milestone-documents/13th-amendment","date":"1865-12-06"},
+ "amendment14":{"name":"National Archives · 14th Amendment","url":"https://www.archives.gov/milestone-documents/14th-amendment","date":"1868-07-09"},
+ "amendment19":{"name":"National Archives · 19th Amendment","url":"https://www.archives.gov/milestone-documents/19th-amendment","date":"1920-08-18"},
+ "civilRights":{"name":"National Archives · Civil Rights Act","url":"https://www.archives.gov/milestone-documents/civil-rights-act","date":"1964-07-02"},
+ "votingAct":{"name":"National Archives · Voting Rights Act","url":"https://www.archives.gov/milestone-documents/voting-rights-act","date":"1965-08-06"},
+ "texasDeclaration":{"name":"Texas State Library · Texas Declaration of Independence","url":"https://www.tsl.texas.gov/treasures/republic/declaration.html","date":"1836-03-02"}
+}

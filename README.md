@@ -1,27 +1,34 @@
-# History/SS Learning Center
+# History Learning Center
 
-Public home: https://mguhlin.github.io/hlc/
+Live: https://mguhlin.github.io/hlc/ · Repository: https://github.com/mguhlin/hlc
 
-Dedicated repository: https://github.com/mguhlin/hlc
+This is the classroom resource itself. The earlier illustrated build plan is retained in `docs/` for project history.
 
-## Current release
+## Classroom resources
 
-An illustrated build plan for a classroom-focused K–12 history and social studies learning center. Includes two generated photorealistic assets, supplied teacher reference graphics, a resource-to-feature map, a school-year flipbook specification, multilingual requirements, and a phased implementation plan.
+- Student-facing daily flipbook: 185 school-day slots, organized as 37 five-day investigations. Each stimulus supports notice, compare, connect, question, and transfer practice.
+- Four grade-band scaffolds; 49 inquiry activities and teaching routines; 16 printable tools.
+- Seven language editions: English, Spanish, Vietnamese, Chinese, Hindi, Urdu, Arabic. Arabic and Urdu use right-to-left layouts. Translations have not been independently reviewed by fluent speakers.
+- PST: complete imported problem-solving collection, including grade-specific units, assessment packs, teacher guidance, image inquiry, and games.
+- Event Maps: 24 reusable organizers, seven-language print-ready PDF sheets and packets, and editable PowerPoint downloads.
+- Teacher guidance connects TEKS skills, current ELPS, UDL, ACE/SOLO progression, evidence-based instructional strategies, and official assessment resources.
 
-This release is a plan. It does not yet provide the full seven-language classroom resource library or the authored school-year calendars.
+The calendar supplements grade-specific history instruction; it is not a complete course curriculum. Invented practice scenarios are labeled. Historical statements link to original records. Selected TEKS examples are explicitly representative, not blanket alignment for every grade. Effect sizes describe research syntheses, not promised gains from these activities.
 
-## Local preview
+## Build and preview
 
-Run `python3 -m http.server 4178` from this directory and open http://127.0.0.1:4178/.
+`python3 scripts/build.py` generates the seven static language editions from `data/`.
 
-The site is static HTML/CSS with a native print action and no runtime dependencies. The PNG originals are retained alongside optimized WebP assets. Image provenance is in `credits.json`.
+`python3 scripts/check_links.py` checks local HTML links and dependencies.
 
-## Planned classroom pilot
+`python3 -m http.server 4178` serves a local preview.
 
-Five openers each for Kindergarten, Grade 4, Grade 8, and U.S. History; four linked inquiry activities; eight printable templates; and all seven locale routes with complete pilot translations and fluent review.
+The flipbook embeds its data and needs no runtime content service. School start date and excluded dates stay in browser local storage. Student responses are completed on paper or orally; no accounts or response collection.
 
-Every published classroom activity must pass source, standards, accessibility, print, and language checks. Standards are versioned by school year. Generated illustrations must remain distinguishable from authentic historical evidence.
+## Imported collections
 
-## Publication
+`pst/` and `eventmaps/` are independently runnable, with their shared language scripts bundled locally. Content attribution: **CC BY-NC 4.0 · Miguel Guhlin 2026**. Original third-party historical sources retain their own terms. Generated classroom images are illustrative, not authentic evidence. Image provenance is recorded in `credits.json`.
 
-GitHub Pages serves the root of the main branch. Commit and push reviewed changes, monitor the Pages build, then verify the live deployment.
+To refresh Event Maps downloads after source edits, run `python3 eventmaps/generate_packets.py` and `python3 eventmaps/generate_pptx.py` (Chrome and pypdf required). The starter-kit ZIP mirrors the adapted `pst/pst-starter-kit/` directory.
+
+GitHub Pages serves the root of `main`. Commit, push, monitor the Pages workflow, and verify the live site after publication.

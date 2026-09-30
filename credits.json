@@ -1,7 +1,7 @@
 {
   "project": "History/SS Learning Center",
   "reviewed": "2026-09-30",
-  "status": "Illustrated planning package; classroom collection not yet authored",
+  "status": "Published classroom resource library",
   "assets": [
     {
       "file": "assets/investigation-workspace.webp",
@@ -33,5 +33,9 @@
       "rights": "Provided by project owner for inclusion; no public reuse license asserted.",
       "alt": "ACE and SOLO progression: articulate, connect, extend."
     }
+  ],
+  "imported_collections": [
+    "pst",
+    "eventmaps"
   ]
 }

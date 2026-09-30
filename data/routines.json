@@ -1,0 +1,14 @@
+[
+ {"id":"storyboard-a-change","title":"storyboard","module":"then-and-now","steps":["storyboard1","storyboard2","storyboard3"],"tool":"storyboard","fields":["noticeBox","connectBox","timelineLimit"]},
+ {"id":"summarize-with-evidence","title":"summarize","module":"founding-documents","steps":["summary1","summary2","summary3"],"tool":"summary","fields":["mainIdeaBox","evidenceBox","summaryBox"]},
+ {"id":"four-question-inquiry","title":"fourQuestions","module":"freedom-and-law","steps":["question1","question2","question3","question4"],"tool":"four-questions","fields":["question1","question2","question3","question4"]},
+ {"id":"vocabulary-in-context","title":"vocabulary","module":"rights-in-a-document","steps":["vocab1","vocab2","vocab3"],"tool":"vocabulary","fields":["wordBox","meaningBox","exampleBox","nonExampleBox"]},
+ {"id":"primary-source-detectives","title":"primarySources","module":"founding-documents","steps":["primary1","primary2","primary3"],"fields":["creatorBox","evidenceBox","claimBox"]},
+ {"id":"socratic-seminar","title":"seminar","module":"public-spaces","steps":["seminar1","seminar2","seminar3"],"tool":"seminar","fields":["questionBox","evidenceBox","revisionBox"]},
+ {"id":"philosophical-chairs","title":"chairs","module":"a-community-budget","steps":["chairs1","chairs2","chairs3"],"fields":["claimBox","evidenceBox","revisionBox"]},
+ {"id":"hexagon-thinking","title":"hexagons","module":"founding-documents","steps":["hex1","hex2","hex3"],"tool":"hexagons","fields":["declaration","constitution","billRights","rights","government","evidence"]},
+ {"id":"civil-discourse","title":"discourse","module":"whose-voice-is-missing","steps":["discourse1","discourse2","discourse3"],"fields":["claimBox","counterBox","revisionBox"]},
+ {"id":"analyze-your-teks","title":"teksLab","module":"texas-declaration","steps":["teks1","teks2","teks3"],"tool":"teks-planner","fields":["standardBox","verbBox","contentBox","evidenceBox","supportBox"],"teacherOnly":true,"official":"https://tea.texas.gov/educators/subject-areas/social-studies/social-studies"},
+ {"id":"holidays-have-histories","title":"holidays","custom":{"id":"holidays","title":"holidays","kind":"timeline","historical":true,"rows":[[1938,"armisticeHoliday","veterans"],[1954,"veteransName","veterans"]]},"steps":["holiday1","holiday2","holiday3"],"tool":"holiday-inquiry","fields":["timelineBox","evidenceBox","wonderBox"],"official":"https://tea.texas.gov/educators/subject-areas/celebrate-freedom-week"},
+ {"id":"remembrance-source-inquiry","title":"remembrance","module":"whose-voice-is-missing","steps":["remembrance1","remembrance2","remembrance3"],"fields":["creatorBox","evidenceBox","wonderBox"],"teacherOnly":true,"approvedSources":true}
+]

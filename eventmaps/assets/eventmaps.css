@@ -1,0 +1,193 @@
+/* History Event Maps — site chrome.
+   ---------------------------------------------------------------------------
+   Reuses the mglearn/activities design system (tokens + primitives shared with
+   lab-safety/ and the rest of the hub) so this area looks like the others:
+   sticky topbar with the language picker, Fredoka headings on Nunito body,
+   navy/gold accents, card grid, footer.
+
+   The organizer sheet itself is styled in `sheet.css`. The card thumbnails
+   here are not images — each one is the real 10.5in × 8in sheet rendered live
+   and scaled down, so a preview can never drift out of sync with the map it
+   previews, and it localizes along with everything else.
+   ------------------------------------------------------------------------ */
+
+:root{
+  --navy:#054c8c;--navy-d:#023266;--gold:#fbd239;--gold-d:#d9a010;
+  --paper:#f4f8fc;--ink:#161c2e;--ink-soft:#516079;--card:#fff;--line:#dbe6f2;
+  --ok:#1f7a34;--ok-bg:#eaf7ee;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:
+  radial-gradient(ellipse 60% 45% at 85% -5%,rgba(251,210,57,.16)0%,transparent 60%),
+  radial-gradient(ellipse 55% 45% at 0% 100%,rgba(5,76,140,.12)0%,transparent 60%),var(--paper);
+  min-height:100vh;line-height:1.55}
+a{color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+
+/* ---- Topbar / language picker ---- */
+.topbar{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:10px 20px}
+.backlink{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.85rem;text-decoration:none;color:var(--navy);
+  display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.backlink:hover{border-color:var(--gold-d)}
+.topbar .spacer{flex:1}
+.nav-mid{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.82rem;color:var(--ink-soft)}
+.lang-picker select{font-family:'Nunito',sans-serif;font-weight:700;font-size:.85rem;color:var(--navy);
+  background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+.lang-picker select:hover{border-color:var(--gold-d)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:22px 20px 90px}
+.wrap.wide{max-width:1240px}
+.wrap.narrow{max-width:800px}
+
+/* ---- Hero / headings ---- */
+header.hero{text-align:center;padding:14px 0 2px}
+/* Banner, same treatment as lab-safety's hero. width/height are on the <img>
+   so the card grid below does not jump while it loads. */
+.herowrap{border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(5,76,140,.18)}
+.hero-img{display:block;width:100%;height:auto}
+#hero-text{margin-top:16px}
+/* hub.js gives #hero-text .sr-only in English, because the banner already
+   says all of it. On a phone the banner's baked-in text shrinks past reading
+   size, so hand it back — a teacher on a phone should not be left with an
+   illegible image as the only introduction. */
+@media (max-width:760px){
+  #hero-text.sr-only{position:static;width:auto;height:auto;margin:16px 0 0;
+    overflow:visible;clip:auto;white-space:normal}
+}
+.hero h1{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.05}
+.hero .sub{color:var(--ink-soft);font-weight:700;margin:8px auto 0;max-width:640px;font-size:1.02rem}
+.hero .lede{color:var(--ink-soft);font-weight:600;margin:12px auto 0;max-width:700px;font-size:.95rem}
+
+h2.sec{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.2rem;margin:40px 0 6px;display:flex;align-items:center;gap:12px}
+h2.sec::before{content:attr(data-band);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);
+  font-weight:700;background:#fff6d6;border:1px solid var(--gold);border-radius:100px;padding:3px 10px;white-space:nowrap}
+h2.sec::after{content:"";flex:1;height:2px;background:var(--line)}
+.sec-sub{color:var(--ink-soft);font-weight:600;font-size:.92rem;max-width:760px;margin-bottom:6px}
+
+/* ---- Standards notice ---- */
+.notice{background:#fffdf3;border:2px solid var(--gold);border-inline-start:6px solid var(--gold-d);border-radius:12px;
+  padding:14px 16px;margin-top:18px;font-size:.86rem;font-weight:600;color:var(--ink-soft);line-height:1.6}
+
+/* ---- Buttons ---- */
+.btn{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:10px;font-family:'Fredoka',sans-serif;
+  font-weight:600;font-size:.86rem;text-decoration:none;border:1.5px solid var(--line);background:#fff;color:var(--navy);
+  cursor:pointer;transition:filter .18s,transform .15s,border-color .18s}
+.btn:hover{border-color:var(--gold-d);transform:translateY(-1px)}
+.btn-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn-primary:hover{filter:brightness(1.1)}
+.btn-gold{background:var(--gold);color:var(--navy-d);border-color:var(--gold)}
+.btn-gold:hover{filter:brightness(1.05)}
+.btn-sm{padding:8px 13px;font-size:.79rem}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+/* ---- Filter bar ---- */
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:end;background:#fff;border:2px solid var(--line);
+  border-radius:16px;padding:16px;margin-top:18px;box-shadow:0 4px 16px rgba(10,36,99,.05)}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-family:'Fredoka',sans-serif;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+.field select,.field input{font-family:'Nunito',sans-serif;font-weight:600;font-size:.9rem;padding:9px 12px;
+  background:#fff;border:1.5px solid var(--line);border-radius:10px;color:var(--ink);min-width:160px}
+.field input{min-width:220px}
+.field select:focus,.field input:focus{outline:none;border-color:var(--navy)}
+.filters .btn{align-self:end}
+
+/* ---- Card grid ---- */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:16px}
+.card{position:relative;display:flex;flex-direction:column;gap:8px;background:var(--card);border:2px solid var(--line);
+  border-top:6px solid var(--navy);border-radius:16px;padding:16px 16px 18px;text-decoration:none;color:inherit;
+  box-shadow:0 4px 16px rgba(10,36,99,.05);transition:transform .18s,border-color .18s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(10,36,99,.13);border-color:var(--gold)}
+/* Keyboard users tab to the title link, not the card, so mirror the hover. */
+.card:focus-within{border-color:var(--gold)}
+.card .mnum{font-family:'Fredoka',sans-serif;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);font-weight:700}
+.card .mtitle{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.15rem;font-weight:700;line-height:1.14}
+.card .mtitle a{color:inherit;text-decoration:none}
+/* Stretched link: the title anchor's ::after covers the card, so the whole
+   card is clickable without wrapping it in an <a> that could not then hold
+   the download link. */
+.card .mtitle a.stretch::after{content:"";position:absolute;inset:0;z-index:1;border-radius:14px}
+/* The blurb lists the map's real prompts; clamp it so cards stay even. */
+.card .mdesc{font-weight:600;color:var(--ink-soft);font-size:.84rem;flex-grow:1;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .mmeta{font-size:.72rem;letter-spacing:.02em;color:var(--ink-soft);font-weight:700;opacity:.85}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.tag{font-family:'Fredoka',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.03em;color:var(--navy);
+  background:#eef4fb;border:1px solid var(--line);border-radius:100px;padding:3px 9px}
+.tag-ok{color:var(--ok);border-color:#bfe4c8;background:var(--ok-bg)}
+.card .mfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;flex-wrap:wrap}
+.card .arr{font-family:'Fredoka',sans-serif;font-weight:700;color:var(--navy);font-size:1.1rem;transition:transform .18s;margin-inline-start:auto}
+.card:hover .arr{transform:translateX(4px)}
+[dir="rtl"] .card:hover .arr{transform:translateX(-4px)}
+/* The per-map deck download. Above the stretched link so it wins the click. */
+.card .tag-dl{position:relative;z-index:2;text-decoration:none;border-color:var(--navy);
+  background:#fff;transition:background .18s,border-color .18s}
+.card .tag-dl:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-d)}
+
+/* ---- Live thumbnail: the real sheet, scaled ----
+   Not a placeholder and not a screenshot — `hub.js` renders the same markup
+   organizer.html renders, then scales it to the card width. The 10.5:8 ratio
+   below matches the sheet's own dimensions, so nothing is cropped. */
+.thumb{position:relative;width:100%;aspect-ratio:10.5/8;overflow:hidden;border-radius:10px;
+  border:1.5px solid var(--line);background:#fff;transition:border-color .18s}
+a.card:hover .thumb{border-color:var(--gold)}
+.thumb .sheet{position:absolute;top:0;left:0;transform-origin:top left;border:none;box-shadow:none;
+  pointer-events:none;user-select:none}
+[dir="rtl"] .thumb .sheet{left:auto;right:0;transform-origin:top right}
+/* A thumbnail is decoration; the card's own text is what gets announced. */
+.thumb[aria-hidden="true"]{contain:paint}
+
+/* ---- Download packets ---- */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+.dl{display:flex;flex-direction:column;gap:4px;border:2px solid var(--line);border-radius:14px;padding:14px 16px;
+  background:#fff;text-decoration:none;transition:border-color .18s,transform .15s}
+.dl:hover{border-color:var(--gold);transform:translateY(-2px)}
+.dl .dlt{font-family:'Fredoka',sans-serif;font-weight:700;color:var(--navy);font-size:.95rem}
+.dl .dls{font-size:.76rem;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em}
+
+/* ---- Prose blocks (About) ---- */
+.block{background:#fff;border:2px solid var(--line);border-radius:16px;padding:22px;margin-top:16px;box-shadow:0 4px 16px rgba(10,36,99,.04)}
+.block h3{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.15rem;margin-bottom:8px}
+.block p{font-weight:600;color:var(--ink);margin:6px 0}
+.muted{color:var(--ink-soft)}
+
+/* ---- Organizer page control bar ---- */
+.viewbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 16px;margin-top:14px;
+  box-shadow:0 4px 16px rgba(10,36,99,.05)}
+.viewbar .vtitle{font-family:'Fredoka',sans-serif;font-weight:700;color:var(--navy);font-size:1rem;margin-inline-end:auto}
+
+/* ---- Footer / back to top ----
+   Scoped to a direct child of .wrap on purpose: the organizer sheet has its
+   own <footer class="sheet-footer"> (sources line, TEKS focus, credit), and a
+   bare `footer{}` rule here would reach into it — and into all 24 thumbnails —
+   adding a 48px margin that pushes the sheet's footer off the page. */
+.wrap > footer{text-align:center;margin-top:48px;padding-top:22px;border-top:2px solid var(--line);font-size:.8rem;
+  color:var(--ink-soft);font-weight:600;line-height:1.7}
+.wrap > footer .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.wrap > footer a{color:var(--navy);font-weight:700;text-decoration:none}
+.wrap > footer a:hover{text-decoration:underline}
+
+#back-to-top{position:fixed;bottom:26px;right:26px;z-index:300;width:44px;height:44px;border-radius:50%;background:var(--navy);
+  color:#fff;border:none;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;text-decoration:none;
+  opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;box-shadow:0 6px 20px rgba(5,76,140,.35)}
+#back-to-top.visible{opacity:1}
+[dir="rtl"] #back-to-top{right:auto;left:26px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+@media (max-width:640px){
+  .filters{padding:12px}
+  .field select,.field input{min-width:0;width:100%}
+  .field{flex:1 1 100%}
+}
+
+/* The hub is a browsing page; printing it should not waste toner on chrome.
+   organizer.html loads sheet-print.css, which owns the @page rule. */
+@media print{
+  .topbar,.filters,.btnrow,#back-to-top,footer,.no-print{display:none!important}
+  body{background:#fff}
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>History Event Map — Miguel Guhlin Activities</title>
+<meta name="description" content="A printable one-page history event map. US Letter landscape, seven languages, grayscale for clean copying.">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/eventmaps.css">
+<link rel="stylesheet" href="assets/sheet.css">
+<link rel="stylesheet" href="assets/sheet-print.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="backlink" data-i18n="back_library">Back to Library</a>
+  <div class="nav-mid" data-i18n="title">History Event Maps</div>
+  <div class="spacer"></div>
+  <div class="lang-picker" data-i18n-picker></div>
+</div>
+
+<main class="wrap wide">
+  <div class="viewbar no-print">
+    <span class="vtitle" id="map-title"></span>
+    <span class="tag" id="map-band"></span>
+    <span class="tag" id="map-skill"></span>
+    <a class="btn btn-sm" id="pdf-link" download data-i18n="download_pdf">Download PDF</a>
+    <a class="btn btn-sm" id="pptx-link" download data-i18n="pptx_langs">PowerPoint — all 7 languages</a>
+    <button class="btn btn-sm btn-primary" id="print-btn" data-i18n="print_btn">Print / Save PDF</button>
+  </div>
+  <p class="sec-sub no-print" style="margin-top:8px;font-size:.82rem" data-i18n="dl_note">Tip: choose landscape and “Background graphics” off for the cleanest print.</p>
+
+  <div class="print-shell" id="sheet-host"></div>
+
+  <footer class="no-print">
+    <div class="flinks">
+      <a href="index.html" data-i18n="nav_hub">← History Event Maps</a>
+      <a href="../" data-i18n="nav_back">← Activities</a>
+      <a href="about.html#about" data-i18n="footer_about">About</a>
+      <a href="about.html#privacy" data-i18n="footer_privacy_link">Privacy</a>
+    </div>
+    <div data-i18n="footer_privacy">No logins. No accounts. No student data collected.</div>
+  </footer>
+</main>
+
+<a href="#" id="back-to-top" aria-label="Back to top" class="no-print">↑</a>
+
+<script src="assets/i18n.js" defer></script>
+<script src="assets/data.js" defer></script>
+<script src="assets/i18n-chrome.js" defer></script>
+<script src="assets/sheet.js" defer></script>
+<script src="assets/chrome.js" defer></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', function () {
+  const S = window.HEM_SHEET, t = window.EM.t;
+  const id = new URLSearchParams(location.search).get('map');
+  const map = S.byId(id) || S.maps[0];
+
+  function render() {
+    const lang = window.EM.lang();
+    const title = t('map_title_' + map.id);
+    document.title = title + ' — History Event Maps';
+    document.getElementById('map-title').textContent = title;
+    document.getElementById('map-band').textContent = t(S.bandKey(map.band));
+    document.getElementById('map-skill').textContent = t(S.skillKey(map.skill));
+    document.getElementById('pdf-link').href = S.pdfHref(map.id, lang);
+    // One deck per map, holding that map in all seven languages.
+    document.getElementById('pptx-link').href = 'pptx/maps/' + map.id + '.pptx';
+    document.getElementById('sheet-host').innerHTML = S.sheetHTML(map, lang);
+  }
+
+  document.getElementById('print-btn').addEventListener('click', () => window.print());
+  render();
+  window.EM.onLangChange(render);
+});
+</script>
+<script src="assets/licensing-footer.js" defer></script>
+</body>
+</html>

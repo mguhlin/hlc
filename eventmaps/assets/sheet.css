@@ -1,0 +1,133 @@
+/* History Event Maps — the printable organizer sheet.
+   ---------------------------------------------------------------------------
+   This is the worksheet itself: a US-Letter-landscape page (10.5in × 8in live
+   area) rendered as live HTML so every label is real text that reflows,
+   translates into seven languages, and reads aloud with a screen reader.
+
+   Everything here is scoped under `.sheet` so it can sit next to the hub
+   chrome in `eventmaps.css` — the hub renders 24 of these at ~30% scale as
+   card thumbnails, so the same markup is both the preview and the printout.
+
+   Colour is never the only signal: the box roles are distinguished by border
+   *style* (solid / dashed / double / heavy) so the grayscale print stays
+   readable on any classroom copier.
+
+   `sheet-print.css` adds the @page rules and is loaded by organizer.html only.
+   ------------------------------------------------------------------------ */
+
+/* Stated here rather than assumed from a page reset: generate_packets.py
+   builds a standalone document from this file alone, with no chrome CSS. */
+.sheet,.sheet *{box-sizing:border-box}
+
+.sheet{
+  width:10.5in;height:8in;background:#fff;
+  font-family:Arial,"Noto Sans","Noto Sans Arabic","Noto Sans Devanagari",sans-serif;
+  color:#111;line-height:normal;
+  border:1px solid #9ca3af;box-shadow:0 10px 30px rgba(0,0,0,.15);
+  padding:.18in .2in .16in;display:grid;grid-template-rows:.70in 1fr .48in;gap:.10in;overflow:hidden}
+/* .70in, not .55in: the Name / Date / Class-Period block needs .66in, and at
+   .55in it overflowed a fixed row — so the bottom-aligned title subline and
+   topic rule printed on top of the header border on every sheet. */
+.sheet.bw{--ink:#111;--accent:#111;--accent2:#111;--accent3:#111;--pale:#fff;--line:#a3a3a3}
+.sheet.rtl{direction:rtl}
+
+/* ---- Header: student meta, title, topic line ---- */
+.sheet-header{display:grid;grid-template-columns:1.2fr 2.2fr 1.3fr;gap:.16in;align-items:end;
+  border-bottom:3px solid var(--ink);margin:0;padding:0 0 .06in;text-align:start}
+.student-meta{font-size:9.5pt;line-height:1.65}
+.blankline{display:inline-block;border-bottom:1px solid #555;min-width:1.45in;height:.16in;vertical-align:bottom}
+.sheet-title{text-align:center}
+.sheet-title h1{margin:0;color:var(--ink);font-size:20pt;line-height:1.05;font-family:inherit;font-weight:bold}
+.sheet-title .band{font-size:9pt;color:#444;margin-top:3px}
+.topic-line{font-size:10pt;text-align:right}
+.rtl .topic-line{text-align:left}
+.topic-line .blankline{min-width:1.65in}
+
+/* ---- Body + footer ---- */
+.map-body{min-height:0;position:relative}
+/* margin/padding/text-align are stated explicitly, not inherited: the page
+   chrome also styles <header> and <footer>, and the sheet must be immune to
+   whatever a host page does to those element names. */
+.sheet-footer{display:grid;grid-template-columns:1.2fr 2.35fr 1.45fr;gap:.10in;align-items:center;
+  border-top:1px solid var(--line);border-bottom:0;margin:0;padding:.05in 0 0;
+  text-align:start;font-size:8pt;line-height:normal;color:#333}
+.source-lines span{display:inline-block;border-bottom:1px solid #666;width:1.2in;margin-left:6px}
+.skill-note{line-height:1.2;text-align:right}
+.rtl .skill-note{text-align:left}
+.credit-note{font-size:7.1pt;line-height:1.15;text-align:right;color:#333}
+.rtl .credit-note{text-align:left}
+
+/* ---- Boxes. Role is carried by border style, not colour. ---- */
+.box{border:2px solid var(--ink);border-radius:18px;background:var(--pale);padding:.08in .10in;
+  min-height:.6in;position:relative;overflow:hidden}
+.box.accent{border-style:dashed}
+.box.gold{border-style:double;border-width:3px}
+.box.purple{border-width:2.5px}
+.box h3{font-size:10.5pt;margin:0 0 .05in;color:var(--ink);line-height:1.05;font-family:inherit;font-weight:bold}
+.lines{height:calc(100% - .19in);min-height:.32in;
+  background:repeating-linear-gradient(to bottom,transparent 0,transparent .22in,var(--line) .225in,var(--line) .23in)}
+.small-lines .lines{background:repeating-linear-gradient(to bottom,transparent 0,transparent .18in,var(--line) .185in,var(--line) .19in)}
+.circle{border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center}
+.center-event{border:4px double var(--ink);font-weight:800;color:var(--ink);background:#fff}
+.event-rect{border-style:dashed;border-width:3px;border-radius:8px;padding:.06in .10in;text-align:center;background:#fff}
+.event-rect h3{font-size:9pt;letter-spacing:.02em;text-transform:uppercase;margin:0 0 .04in}
+.event-rect .event-name{display:block;font-size:18pt;font-weight:800;line-height:1.05}
+.event-rect .event-line{display:block;border-bottom:2px solid #666;margin:.08in .35in 0;height:.12in}
+.sheet .arrow{display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:22pt;font-weight:bold}
+.sheet .arrow.down{font-size:18pt}
+.label-chip{font-size:8.5pt;font-weight:700;border:1px solid var(--ink);border-radius:999px;padding:2px 7px;display:inline-block;background:#fff}
+.mini-title,.small-label{font-size:8.5pt;font-weight:700;color:var(--ink);margin-bottom:2px}
+
+/* ---- Generic sub-grids used inside layouts ---- */
+.sheet .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.1in}
+.sheet .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:.1in}
+.sheet .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:.09in}
+.sheet .stack{display:grid;gap:.08in}
+.flow-row{display:flex;align-items:stretch;gap:.07in;height:100%}
+.rtl .flow-row{direction:rtl}
+.flow-row>.box{flex:1}
+.flow-row>.arrow{width:.28in}
+
+/* ---- People/group and sequence furniture ---- */
+.group-stack{display:grid;grid-template-rows:auto 1fr 1fr;gap:.07in}
+.group-head{border:2px solid var(--ink);border-radius:8px;padding:.05in .06in;text-align:center;font-size:10pt;font-weight:700;background:#fff}
+.group-matrix{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.08in}
+.sequence-strip{border:2px solid var(--ink);border-radius:8px;padding:.04in .06in;background:#fff}
+.sequence-strip h3{margin:0 0 .03in;text-align:center;font-size:10.5pt;font-family:inherit;font-weight:bold}
+.seq-lines{height:1.1in;position:relative;
+  background:repeating-linear-gradient(to bottom,transparent 0,transparent .18in,var(--line) .185in,var(--line) .19in)}
+.seq-lines .num{position:absolute;left:.06in;font-size:10pt;font-weight:700}
+.seq-lines .n1{top:.02in}.seq-lines .n2{top:.21in}.seq-lines .n3{top:.40in}
+.seq-lines .n4{top:.59in}.seq-lines .n5{top:.78in}
+.rtl .seq-lines .num{left:auto;right:.06in}
+
+/* ---- Per-map layouts (one grid per organizer family) ---- */
+.layout-snapshot{display:grid;grid-template-columns:1fr 1.15fr 1fr;grid-template-rows:1fr .72fr 1fr;gap:.08in}
+.layout-snapshot .center{grid-column:2;grid-row:1/3;display:grid;grid-template-rows:.9fr 1fr;gap:.1in}
+.layout-causeeffect{display:grid;grid-template-rows:1fr .8fr;gap:.12in}
+.layout-sequence{display:grid;grid-template-rows:1fr 1.05fr;gap:.1in}
+.layout-peoplegroups{display:grid;grid-template-columns:1.2fr 2fr;gap:.12in}
+.layout-place{display:grid;grid-template-columns:1fr .85fr 1fr;grid-template-rows:1fr 1fr;gap:.1in}
+.layout-thennow{display:grid;grid-template-rows:1fr 1fr;gap:.11in}
+.layout-evidence3{display:grid;grid-template-rows:1.3fr .8fr;gap:.1in}
+.layout-importance{display:grid;grid-template-columns:.8fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:.1in}
+.layout-investigator{display:grid;grid-template-columns:1fr .95fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:.08in}
+.layout-pressure{display:grid;grid-template-rows:1fr .9fr;gap:.1in}
+.layout-turning{display:grid;grid-template-columns:1fr .35fr 1fr .35fr 1fr;grid-template-rows:1fr .8fr;gap:.08in}
+.layout-perspectives{display:grid;grid-template-columns:1fr .75fr 1fr;grid-template-rows:1fr 1fr .7fr;gap:.08in}
+.layout-leader{display:grid;grid-template-columns:1fr .9fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:.08in}
+.layout-conflict{display:grid;grid-template-columns:1fr .75fr 1fr;grid-template-rows:1.2fr .7fr;gap:.1in}
+.layout-chain{display:grid;grid-template-rows:1fr .75fr;gap:.1in}
+.layout-geo{display:grid;grid-template-columns:1fr .9fr 1fr;grid-template-rows:1fr 1fr .7fr;gap:.08in}
+.layout-context{display:grid;grid-template-columns:1fr .8fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:.08in}
+.layout-ranking{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr .7fr;gap:.09in}
+.layout-turning2{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr .7fr;gap:.09in}
+.layout-perspevidence{display:grid;grid-template-columns:1fr .8fr 1fr;grid-template-rows:1fr 1fr .75fr;gap:.08in}
+.layout-impact4{display:grid;grid-template-columns:1fr .7fr 1fr;grid-template-rows:1fr 1fr .72fr;gap:.08in}
+.layout-continuity{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr .9fr .65fr;gap:.09in}
+.layout-dossier{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:.55fr 1.4fr .75fr;gap:.08in}
+.layout-compare{display:grid;grid-template-columns:1fr .8fr 1fr;grid-template-rows:.55fr 1fr 1fr .62fr;gap:.08in}
+.layout-investigator2{display:grid;grid-template-columns:1fr 1.15fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:.08in}
+.layout-hybrid{display:grid;grid-template-columns:1.05fr 1.2fr 1.05fr;grid-template-rows:.95fr .85fr 1fr;gap:.08in}
+.compact .box h3{font-size:9.2pt}
+.compact .box{padding:.06in .08in}

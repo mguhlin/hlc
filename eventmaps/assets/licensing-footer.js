@@ -1,0 +1,1 @@
+(()=>{const f=document.createElement('footer');f.style.cssText='text-align:center;padding:24px;font:14px system-ui';f.innerHTML='<a href="https://mguhlin.github.io/hlc/">History Learning Center</a> · © Miguel Guhlin 2026 · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>';document.body.append(f)})();

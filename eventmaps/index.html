@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>History Event Maps — Miguel Guhlin Activities</title>
+<meta name="description" content="24 reusable one-page history graphic organizers for grades 3–12. Pick a map, research an event, fill in what you discover. Seven languages, printable grayscale PDFs, TEKS skill-aligned, no student data collected.">
+<meta property="og:title" content="History Event Maps">
+<meta property="og:description" content="Pick a map. Research an event. Fill in what you discover. 24 printable organizers, seven languages, TEKS skill-aligned.">
+<meta property="og:image" content="https://mguhlin.github.io/hlc/eventmaps/assets/hero.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/eventmaps.css">
+<link rel="stylesheet" href="assets/sheet.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../" class="backlink" data-i18n="nav_back">← Activities</a>
+  <div class="nav-mid" data-i18n="title">History Event Maps</div>
+  <div class="spacer"></div>
+  <div class="lang-picker" data-i18n-picker></div>
+</div>
+
+<main class="wrap wide">
+  <header class="hero" id="top">
+    <div class="herowrap">
+      <img class="hero-img" src="assets/hero.png" width="2172" height="724"
+        alt="History Event Maps — pick a map, research an event, fill in what you discover. Reusable one-page organizers for quick source review, brief research, student note-making, and teacher fill-in. No lessons or units required. No logins, no accounts, no student data; everything runs in your browser.">
+    </div>
+    <!-- The banner already says all of this, but only in English. hub.js hides
+         this block from sight (never from screen readers) when English is
+         selected, and shows it for the other six languages, where the artwork
+         is not a translation. With JS off it simply stays visible. -->
+    <div id="hero-text">
+      <h1 data-i18n="title">History Event Maps</h1>
+      <p class="sub" data-i18n="subtitle">Pick a map. Research an event. Fill in what you discover.</p>
+      <p class="lede" data-i18n="library_intro">Reusable one-page organizers for quick source review, brief research, student note-making, and teacher fill-in. No lessons or units required.</p>
+      <p class="lede" style="font-size:.85rem" data-i18n="intro_privacy">No logins, no accounts, no student data — everything runs in your browser.</p>
+    </div>
+  </header>
+
+  <p class="notice" data-i18n="current_teks_note">Aligned to the current 2022-adopted Texas Social Studies TEKS implemented beginning in 2024-2025.</p>
+
+  <!-- Filters -->
+  <div class="filters" role="search">
+    <div class="field">
+      <label for="f-band" data-i18n="f_grade">Grade band</label>
+      <select id="f-band"><option value="">All grade bands</option></select>
+    </div>
+    <div class="field">
+      <label for="f-skill" data-i18n="skill">Skill</label>
+      <select id="f-skill"><option value="">All thinking skills</option></select>
+    </div>
+    <div class="field" style="flex:1">
+      <label for="f-search" data-i18n="search">Search maps</label>
+      <input id="f-search" type="search" data-i18n-placeholder="search" placeholder="Search maps">
+    </div>
+    <button class="btn" id="f-reset" data-i18n="f_reset">Reset filters</button>
+  </div>
+
+  <!-- Whole-library downloads sit above the 24 cards on purpose: below them
+       they were ~6000px down the page and effectively undiscoverable. -->
+  <h2 class="sec" data-band="PDF · PPTX" data-i18n="downloads_title">Download the whole library</h2>
+  <p class="sec-sub" data-i18n="downloads_sub">Every map in one file — print-ready PDF or editable PowerPoint, in the language you selected.</p>
+  <div id="downloads" class="dl-grid"></div>
+  <p class="sec-sub" style="margin-top:10px;font-size:.82rem" data-i18n="print_note">Designed for US Letter landscape printing.</p>
+
+  <!-- Library: every card carries a live, scaled render of the real sheet -->
+  <h2 class="sec" id="sec-library" data-band="24" data-i18n="gallery_title">Choose how you want students to think</h2>
+  <p class="sec-sub" id="result-count"></p>
+  <div id="cards" class="cards"></div>
+  <p id="no-results" class="sec-sub" style="display:none" data-i18n="no_results">No maps match those filters yet.</p>
+
+  <footer>
+    <div class="flinks">
+      <a href="../" data-i18n="nav_back">← Activities</a>
+      <a href="about.html#about" data-i18n="footer_about">About</a>
+      <a href="about.html#privacy" data-i18n="footer_privacy_link">Privacy</a>
+      <a href="about.html#accessibility" data-i18n="footer_a11y">Accessibility</a>
+    </div>
+    <div data-i18n="site_footer">Texas Social Studies skill-aligned printable organizers. No lessons or units.</div>
+  </footer>
+</main>
+
+<a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
+<script src="assets/i18n.js" defer></script>
+<script src="assets/data.js" defer></script>
+<script src="assets/i18n-chrome.js" defer></script>
+<script src="assets/sheet.js" defer></script>
+<script src="assets/chrome.js" defer></script>
+<script src="assets/hub.js" defer></script>
+<script src="assets/licensing-footer.js" defer></script>
+</body>
+</html>
