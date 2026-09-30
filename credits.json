@@ -1,0 +1,37 @@
+{
+  "project": "History/SS Learning Center",
+  "reviewed": "2026-09-30",
+  "status": "Illustrated planning package; classroom collection not yet authored",
+  "assets": [
+    {
+      "file": "assets/investigation-workspace.webp",
+      "original": "assets/investigation-workspace.png",
+      "kind": "AI-generated illustrative photograph",
+      "tool": "imagegen",
+      "alt": "Modern investigation workspace with atlas, globe, magnifying glass, and blank evidence cards.",
+      "prompt": "Wide editorial photograph of a modern classroom investigation table. Atlas, globe, magnifying glass, archival gloves, cream blank evidence cards, pencils. Natural morning light, navy/cream/sage/brass. Left negative space. No readable text, logos or political symbols. Illustrative modern workspace, not historical evidence."
+    },
+    {
+      "file": "assets/students-comparing-evidence.webp",
+      "original": "assets/students-comparing-evidence.png",
+      "kind": "AI-generated illustrative photograph",
+      "tool": "imagegen",
+      "alt": "Three fictional students compare a terrain map and photographs at a classroom table.",
+      "prompt": "Photorealistic modern classroom: three fictional middle-school students compare an unlabeled physical terrain map and two contemporary photographs of a bridge, arranging blank evidence cards. Natural attentive expressions, daylight, navy/cream/sage palette. No readable text, logos, political symbols or watermarks. Illustrative scene, not historical evidence."
+    },
+    {
+      "file": "assets/udl-quick-reference.jpg",
+      "kind": "User-supplied reference graphic",
+      "source": "https://mguhlin.org/portfolio/assets/images/b7d3f2d5097d4b659a4fee8a55764504-e6a53fc4c9df21cd.jpg",
+      "rights": "Provided by project owner for inclusion; no public reuse license asserted.",
+      "alt": "UDL quick reference: engagement, representation, action and expression."
+    },
+    {
+      "file": "assets/ace-solo-guide.png",
+      "kind": "User-supplied reference graphic",
+      "source": "https://blog.tcea.org/wp-content/uploads/2026/07/SOLO_ACE_AI_Guide-1024x576.png",
+      "rights": "Provided by project owner for inclusion; no public reuse license asserted.",
+      "alt": "ACE and SOLO progression: articulate, connect, extend."
+    }
+  ]
+}
