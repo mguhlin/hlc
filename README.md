@@ -11,6 +11,7 @@ This is the classroom resource itself. The earlier illustrated build plan is ret
 - Seven language editions: English, Spanish, Vietnamese, Chinese, Hindi, Urdu, Arabic. Arabic and Urdu use right-to-left layouts. Translations have not been independently reviewed by fluent speakers.
 - PST: complete imported problem-solving collection, including grade-specific units, assessment packs, teacher guidance, image inquiry, and games.
 - Event Maps: 24 reusable organizers, seven-language print-ready PDF sheets and packets, and editable PowerPoint downloads.
+- Juneteenth & the Meaning of Freedom: a seven-language collection of 13 self-contained interactive activities (K–12) tracing June 19, 1865, from Galveston to a federal holiday. Built from `juneteenth/build.py`; see `juneteenth/README.md`.
 - Teacher guidance connects TEKS skills, current ELPS, UDL, ACE/SOLO progression, evidence-based instructional strategies, and official assessment resources.
 
 The calendar supplements grade-specific history instruction; it is not a complete course curriculum. Invented practice scenarios are labeled. Historical statements link to original records. Selected TEKS examples are explicitly representative, not blanket alignment for every grade. Effect sizes describe research syntheses, not promised gains from these activities.
