@@ -412,7 +412,7 @@ def page(lang, route, title, body):
            f'<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
            f'<meta name="referrer" content="no-referrer">'
            f'<meta name="description" content="{esc(t("collection", lang))} · {esc(title)}">'
-           f'<title>{esc(title)} · {t("collection", lang)}</title>'
+           f'<title>{esc(title)}{"" if title == t("collection", lang) else " · " + t("collection", lang)}</title>'
            f'<style>{CSS}</style></head><body>'
            f'{header(lang, route)}{body}{footer(lang)}'
            f'<script>window.__JT__={data};</script><script>{JS}</script></body></html>')
