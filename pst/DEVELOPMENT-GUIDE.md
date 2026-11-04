@@ -121,7 +121,7 @@ per-key fallback; native `vi/ar/hi/ur/zh` layers are a later pass (same disclaim
 
 **High School (§113.C) — next band after 3–8.** Course-based, not grade-based; each course is its
 own hub under `pst/hs-<course>/`. Confirm SEs against `ch113c-0.pdf` before authoring.
-- **US History Since 1877 · §113.41 — BUILT & LIVE 2026-07-10 (pst/hs-us-history/panama-canal/).** Anchors confirmed vs ch113c-0.pdf: canal geography (c)(12), world-power/expansionism (c)(7), source skills (c)(29), communication (c)(30), problem-solving process (c)(32)(B). Imperialism & the **Panama Canal**
+- **US History Since 1877 · §113.41 — BUILT & LIVE (pst/hs-us-history/panama-canal/).** Anchors confirmed vs ch113c-0.pdf: canal geography (c)(12), world-power/expansionism (c)(7), source skills (c)(29), communication (c)(30), problem-solving process (c)(32)(B). Imperialism & the **Panama Canal**
   (T. Roosevelt, "big stick", 1903 Panama independence, the canal-zone question — a rich
   ill-structured stakeholder problem: *should the U.S. build and control a canal across Panama, and
   how?*); also the Progressive Era, the Depression/New Deal, the Cold War, and Civil Rights.
@@ -154,7 +154,9 @@ Each new grade/course band should re-confirm the anchor SEs against the `ch113a-
 
 ---
 
-## 6. PST Project Pack — BUILT & LIVE 2026-07-10 (pst/pst_project_pack.md + pst-starter-kit/ + .zip)
+<a id="6-pst-project-pack-built-live-2026-07-10-pst-pst-project-pack-md-pst-starter-kit-zip"></a><a id="6-pst-project-pack--built--live-2026-07-10-pstpst_project_packmd--pst-starter-kit--zip"></a>
+
+## 6. PST Project Pack — BUILT & LIVE (pst/pst_project_pack.md + pst-starter-kit/ + .zip)
 
 Build a **self-contained PST Project Pack**, modeled on `../activities/ctob_project_pack.md` +
 `../activities/ctob-starter-kit/` + `../activities/ctob-starter-kit.zip`, so anyone (or any chatbot) can generate a new
@@ -203,7 +205,9 @@ what the pack teaches.
 
 ---
 
-## 7. ACE Image Inquiry — historical art-analysis unit (`pst/analysis/`, BUILT & LIVE 2026-07-10)
+<a id="7-ace-image-inquiry-historical-art-analysis-unit-pst-analysis-built-live-2026-07-10"></a><a id="7-ace-image-inquiry--historical-art-analysis-unit-pstanalysis-built--live-2026-07-10"></a>
+
+## 7. ACE Image Inquiry — historical art-analysis unit (`pst/analysis/`, BUILT & LIVE)
 
 **Built:** `pst/analysis/{index,gallery,facilitator-guide}.html` + `i18n-analysis.js` (137 keys ×
 7 langs). Routine hub (ACE table, step-by-step, exit ticket, rubric, "run it tomorrow"), an
@@ -267,7 +271,9 @@ copyrighted images directly — **link to the hosting museum/collection page** r
 
 ---
 
-## 8. PST Arcade Tickets — entry/exit "games" (`pst/games/`, COMPLETE — ALL 18 UNITS LIVE 2026-07-10)
+<a id="8-pst-arcade-tickets-entry-exit-games-pst-games-complete-all-18-units-live-2026-07-10"></a><a id="8-pst-arcade-tickets--entryexit-games-pstgames-complete--all-18-units-live-2026-07-10"></a>
+
+## 8. PST Arcade Tickets — entry/exit "games" (`pst/games/`, COMPLETE — ALL 18 UNITS LIVE)
 
 **Now 108 tickets across all 18 units** (54 entry / 54 exit; every unit × every phase × entry/exit),
 7 languages, answer indices preserved; all 54 phase pages carry pills. **Per-unit sources** live in

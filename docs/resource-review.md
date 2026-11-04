@@ -1,4 +1,6 @@
-# Resource review — September 30, 2026
+<a id="resource-review-september-30-2026"></a><a id="resource-review--september-30-2026"></a>
+
+# Resource review
 
 The regional Social Studies Resources page and the supplied Tuesday Tutorial topics informed original classroom routines: inquiry, timelines, storyboards, summarization, vocabulary, primary-source analysis, seminar, philosophical chairs, hexagon thinking, civil discourse, TEKS planning, and holidays inquiry. Four-question inquiry here is an original classroom scaffold, not a reproduced proprietary method. Curriculum planning asks teachers to consult their licensed local curriculum; no licensed curriculum was copied.
 

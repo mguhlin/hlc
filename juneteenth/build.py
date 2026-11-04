@@ -442,7 +442,7 @@ def teacher_panel(a, lang):
             f'<h3>{t("Answer key", lang)}</h3><ul>{key}</ul>'
             f'<h3>{t("Discussion questions", lang)}</h3><ul>{disc}</ul>'
             f'<h3>{t("Teaching hard history", lang)}</h3><p>{t(a["hard_history"], lang)}</p>'
-            f'<p class="small">{t("Standards reviewed October 17, 2026. Selected skill connections, not a full course alignment.", lang)}</p></details>')
+            f'<p class="small">{t("Selected skill connections, not a full course alignment.", lang)}</p></details>')
 
 
 def source_block(a, lang):
@@ -548,7 +548,7 @@ def all_strings():
               'Code not yet confirmed — verify against current TEA TEKS before teaching.',
               'Answer key', 'Discussion questions', 'Teaching hard history', 'See also',
               'July 5 & Black Freedom Holidays — Critical Thinking Breakouts in the History Learning Center.',
-              'Standards reviewed October 17, 2026. Selected skill connections, not a full course alignment.',
+              'Selected skill connections, not a full course alignment.',
               'No login. No tracking. Responses stay with you.',
               'Works offline. Nothing you type is saved or sent.',
               'This translation was authored with AI assistance and awaits review by a fluent speaker.',

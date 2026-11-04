@@ -1,6 +1,6 @@
 # Juneteenth & the Meaning of Freedom: Activity Development Plan
 
-Oct 17, 2026 · @Miguel Guhlin
+@Miguel Guhlin
 
 ## Overview
 
