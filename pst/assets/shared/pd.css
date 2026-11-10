@@ -24,7 +24,7 @@ body{font-family:'Nunito',sans-serif;color:var(--pd-ink);line-height:1.55;
 .crumb a{color:var(--pd-link);text-decoration:none}
 .crumb a:hover{text-decoration:underline}
 .eyebrow{display:inline-block;background:var(--pd-accent);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
-  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:12px}
+  font-size:.75rem;letter-spacing:normal;text-transform:none;padding:6px 16px;border-radius:100px;margin-bottom:12px}
 h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.75rem,5vw,2.5rem);color:var(--pd-navy);line-height:1.15}
 .lead{font-weight:600;color:var(--pd-ink-soft);margin-top:8px;max-width:74ch}
 .goal{background:var(--pd-card);border:2px solid var(--pd-line);border-inline-start:6px solid var(--pd-accent);
